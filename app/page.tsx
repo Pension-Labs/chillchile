@@ -54,13 +54,13 @@ export default function Home() {
 				/>
 				<a
 					href="mailto:nico@pensionfi.com"
-					className="underline hover:text-blue-500"
+					className="underline text-blue-800 hover:text-blue-500"
 				>
 					Quiero publicitar acá
 				</a>
 				<a
 					href="mailto:nico@pensionfi.com"
-					className="underline hover:text-blue-500"
+					className="underline text-blue-800 hover:text-blue-500"
 				>
 					Quiero comprar este dominio
 				</a>
