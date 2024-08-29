@@ -1,7 +1,7 @@
 'use client';
 
 import Image from 'next/image';
-
+import Script from 'next/script';
 import { useState } from 'react';
 
 export default function Home() {
@@ -44,27 +44,45 @@ export default function Home() {
 			});
 	};
 	return (
-		<main className="flex min-h-full  flex-col items-center justify-center p-24">
-			<div className="w-full flex flex-col gap-y-4 max-w-5xl items-center justify-center text-center font-mono">
-				<Image
-					src="/assets/image5.png"
-					alt="ChillChile"
-					width={593}
-					height={360}
-				/>
-				<a
-					href="mailto:nico@pensionfi.com"
-					className="underline text-blue-800 hover:text-blue-500"
-				>
-					Quiero publicitar acá
-				</a>
-				<a
-					href="mailto:nico@pensionfi.com"
-					className="underline text-blue-800 hover:text-blue-500"
-				>
-					Quiero comprar este dominio
-				</a>
-			</div>
-		</main>
+		<>
+			<Script
+				strategy="afterInteractive"
+				src={`https://www.googletagmanager.com/gtag/js?id=G-W1ZCZVCHH9`}
+			/>
+			<Script
+				id="gtag-init"
+				strategy="afterInteractive"
+				dangerouslySetInnerHTML={{
+					__html: `
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-W1ZCZVCHH9');
+          `,
+				}}
+			/>
+			<main className="flex min-h-full  flex-col items-center justify-center p-24">
+				<div className="w-full flex flex-col gap-y-4 max-w-5xl items-center justify-center text-center font-mono">
+					<Image
+						src="/assets/image5.png"
+						alt="ChillChile"
+						width={593}
+						height={360}
+					/>
+					<a
+						href="mailto:nico@pensionfi.com"
+						className="underline text-blue-800 hover:text-blue-500"
+					>
+						Quiero publicitar acá
+					</a>
+					<a
+						href="mailto:nico@pensionfi.com"
+						className="underline text-blue-800 hover:text-blue-500"
+					>
+						Quiero comprar este dominio
+					</a>
+				</div>
+			</main>
+		</>
 	);
 }
